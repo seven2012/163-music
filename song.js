@@ -1,5 +1,6 @@
 $(function () {
-    $.get('/lyric.json').then(function (object) {
+
+    $.get('./lyric.json').then(function (object) {
         console.log(object)
         let lyric = object.lyric
         console.log(lyric)
@@ -12,7 +13,6 @@ $(function () {
                 console.log(matches[2])
                 return { time: matches[1], words: matches[2] }
             }
-
         })
 
         let $lyric = $('.lyric')
