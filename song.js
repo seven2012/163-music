@@ -48,6 +48,32 @@ $(function () {
             audio.play()
             $('.disc-container').addClass('playing')
         })
+        setInterval(() => {
+            let seconds = audio.currentTime
+            let minutes = ~~(seconds / 60)
+            let left = seconds - minutes * 60
+            let time = `${double(minutes)}:${double(left)}`
+            let $lines = $('.lyric-scroll> p')
+            let $whichLine
+            for (let i = 0; i < $lines.length; i++) {
+                let currentLineTime = $lines.eq(i).attr('data-time')
+                let nextLineTime = $lines.eq(i + 1).attr('data-time')
+                if ($lines.eq(i + 1).length !== 0 && currentLineTime < time && nextLineTime > time) {
+                    $whichLine = $lines.eq(i)
+                    break
+                }
+            }
+            if ($whichLine) {
+                $whichLine.addClass('active').prev().removeClass('active')
+                let top = $whichLine.offset().top
+                let linesTop = $('.lyric-scroll').offset().top
+                let delta = top - linesTop - $('.lyric').height() / 3
+                $('.lyric-scroll').css('transform', `translateY(-${delta}px)`)
+            }
+        }, 300)
+    }
+    function double(number) {
+        return number >= 10 ? number + '' : '0' + number
     }
 
     initAudio()
