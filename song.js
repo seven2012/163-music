@@ -25,6 +25,7 @@ $(function () {
             })
         })
     }
+    initWords()
 
 
     function initAudio() {
@@ -49,7 +50,7 @@ $(function () {
         })
     }
 
-
+    initAudio()
 
 
 
