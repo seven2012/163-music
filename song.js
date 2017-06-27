@@ -1,5 +1,6 @@
 $(function () {
 
+
     function initWords() {
         $.get('./songs.json').then(function (object) {
             console.log(object)
@@ -48,6 +49,7 @@ $(function () {
             audio.play()
             $('.disc-container').addClass('playing')
         })
+        //同步歌词
         setInterval(() => {
             let seconds = audio.currentTime
             let minutes = ~~(seconds / 60)

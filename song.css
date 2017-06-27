@@ -130,7 +130,7 @@ h1,h2,h3{
     width:39vw;
     line-height: 2.2;
     background: transparent;
-    border:1px solid #922923;
+    border:1px solid #d43b32;
     -webkit-border-fit: repeat;
     border-radius: 1vw;
     text-decoration: none;
@@ -141,12 +141,12 @@ h1,h2,h3{
 #disc-wrapper .links a.btn1{
     margin-left:10vw;
     margin-right:3vw;
-    color:#922923;
+    color:#d43b32
 }
 #disc-wrapper .links a.btn2{
     margin-right:10vw;
-    background: #922923;
-    color:#B0B0B0;
+    background: #d43b32;
+    color:#fff;
 }
 
 
