@@ -56,8 +56,20 @@ h1,h2,h3{
 }
 #disc-wrapper .disc-container{
     display:flex;
+    display:-webkit-flex;
+
     justify-content: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+
     align-items: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+
     position: relative;
     margin-top:58vw;
     z-index:2;  
@@ -98,26 +110,38 @@ h1,h2,h3{
 .disc-container .disc{
     width:80vw;
     position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 .disc-container .light{
     width:80vw;
     position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 .disc-container .picture{
     width:50vw;
     border-radius: 50%;
     position: absolute;
-    z-index: 1;
+    z-index: 1; 
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);   
 }
  
 #disc-wrapper .icon{
    position:absolute;
-   top:38vw;
+   top:28%;
    left:50%;
    transform: translateX(-50%);
-   width:14vw;
+   width:13vw;
+   height:13vw;
+   border-radius: 50%;
    z-index: 100;
-   fill:rgba(255,255,255,1);
+   fill:rgba(255,255,255,.7);
+   background: rgba(0,0,0,0.1);
 }
 
 #disc-wrapper .links{
