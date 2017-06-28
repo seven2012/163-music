@@ -1,37 +1,41 @@
 $(function () {
 
+    let id = parseInt(location.search.match(/\bid=([^&]*)/)[1], 10)
 
-    function initWords() {
-        $.get('./songs.json').then(function (object) {
-            console.log(object)
-            let lyric = object.lyric
-            console.log(lyric)
-            let array = lyric.split('\n')
-            let regex = /^\[(.+)\](.*)$/
-            array = array.map(function (string) {
-                let matches = regex.exec(string)
-                if (matches) {
-                    console.log(matches[1])
-                    console.log(matches[2])
-                    return { time: matches[1], words: matches[2] }
-                }
-            })
+    $.get('./songs.json').then(function (response) {
+        let songs = response
+        let song = songs.filter(s => s.id === id)[0]
+        let { url, name, img, back, lyric } = song
 
-            let $lyric = $('.lyric')
-            array.map(function (object) {
-                if (!object) { return }
-                let $p = $('<p/>')
-                $p.attr('data-time', object.time).text(object.words)
-                $p.appendTo($lyric.children('.lyric-scroll'))
-            })
-        })
+        initAudio(url)
+        initText(name, lyric)
+        initPicture(img)
+        setBackground(back)
+    })
+
+    function initPicture(img){
+        //console.log(img)
+        
+        let $picture = $(`<img class="picture" src=${img} alt="picture">`)
+             $picture.appendTo('.disc-container')
     }
-    initWords()
+    
+    function setBackground(back){
+        console.log(back)
+          let $discWrapper = $('#disc-wrapper')
 
+        $backgroundImg = $('#disc-wrapper').css('background','transparent url(' + back + ') no-repeat center')
+                        .css('background-size','cover')
+    }
 
-    function initAudio() {
+    function initText(name, lyric) {
+        $('.m-song-info > h2').text(name)
+        initWords(lyric)
+    }
+
+    function initAudio(url) {
         let audio = document.createElement('audio')
-        audio.src = 'http://oplbcrrjd.bkt.clouddn.com/a1c6%252Fde3a%252F6efd%252F1b7e8ba1ffce645218a1748cd8f644ff.mp3'
+        audio.src = url
 
         audio.oncanplay = function () {
             audio.play()
@@ -70,16 +74,41 @@ $(function () {
                 let top = $whichLine.offset().top
                 let linesTop = $('.lyric-scroll').offset().top
                 let delta = top - linesTop - $('.lyric').height() / 3
+                
                 $('.lyric-scroll').css('transform', `translateY(-${delta}px)`)
             }
         }, 300)
     }
+
+
+
+    function initWords(lyric) {
+
+            let array = lyric.split('\n')
+            let regex = /^\[(.+)\](.*)$/
+
+            array = array.map(function (string) {
+                let matches = regex.exec(string)
+                if (matches) {
+                    console.log(matches[1])
+                    console.log(matches[2])
+                    return { time: matches[1], words: matches[2] }
+                }
+            })
+
+            let $lyric = $('.lyric')
+            array.map(function (object) {
+                if (!object) { return }
+                let $p = $('<p/>')
+                $p.attr('data-time', object.time).text(object.words)
+                $p.appendTo($lyric.children('.lyric-scroll'))
+            })
+        
+    }
+    
+
     function double(number) {
         return number >= 10 ? number + '' : '0' + number
     }
-
-    initAudio()
-
-
 
 })

@@ -2,6 +2,7 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+    //border:1px solid red;
 }
 *::before,*::after{
     box-sizing: border-box;
@@ -20,8 +21,7 @@ h1,h2,h3{
 #disc-wrapper{
     min-width:320px;
     height:100vh; 
-    background: transparent url(https://p4.music.126.net/AMz5AGpZN2gj3SHYcx5kbw==/1763616650972259.jpg) no-repeat center;
-    background-size: cover;
+    overflow: hidden;
     opacity: 1;  
     display: flex;
     flex-direction: column;
@@ -31,7 +31,7 @@ h1,h2,h3{
     content:"";
     width:100%;
     height:100%;
-    background: rgba(0,0,0,0.6); 
+    background: rgba(0,0,0,0.7); 
     position:absolute;
     left:0;
     top:0;
@@ -127,7 +127,7 @@ h1,h2,h3{
     z-index: 11;
 }
 #disc-wrapper .links a{
-    width:39vw;
+    width:38vw;
     line-height: 2.2;
     background: transparent;
     border:1px solid #d43b32;
@@ -186,8 +186,11 @@ h1,h2,h3{
     margin-top: 3vw;
     height:90px;
     overflow: hidden;
+   
 }
-
+.lyric-scroll{
+    transition:transform .3s ease-out;
+}
 
 .lyric p {
     color: hsla(0,0%,100%,.6);

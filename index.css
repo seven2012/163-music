@@ -208,12 +208,12 @@ h2.latestMusicTitle{
 .latestMusic li a p{
     font-size: 3.2vw;
     color: #888;
+    text-align: start;
 }
 .latestMusic li p img{
     width: 3.733333vw;
     height:2.133336vw;
     margin-right:1.666668vw;
-     
 }
 .latestMusic li .icon-link-play{
     width:7.2vw;
