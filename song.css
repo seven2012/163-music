@@ -133,15 +133,12 @@ h1,h2,h3{
  
 #disc-wrapper .icon{
    position:absolute;
-   top:32%;
+   top:33%;
    left:50%;
    transform: translate(-50%,-50%);
-   width:13vw;
-   //height:13vw;
-   //border-radius: 50%;
+   width:100%;
    z-index: 5;
-   fill:rgba(255,255,255,.7);
-   //background: rgba(0,0,0,0.1);
+   fill:rgba(255,255,255,0);
 }
 
 #disc-wrapper .links{
