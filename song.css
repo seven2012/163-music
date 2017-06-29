@@ -137,11 +137,11 @@ h1,h2,h3{
    left:50%;
    transform: translate(-50%,-50%);
    width:13vw;
-   height:13vw;
-   border-radius: 50%;
+   //height:13vw;
+   //border-radius: 50%;
    z-index: 5;
    fill:rgba(255,255,255,.7);
-   background: rgba(0,0,0,0.1);
+   //background: rgba(0,0,0,0.1);
 }
 
 #disc-wrapper .links{
