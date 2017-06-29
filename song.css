@@ -133,7 +133,7 @@ h1,h2,h3{
  
 #disc-wrapper .icon{
    position:absolute;
-   top:28vh;
+   top:48vw;
    left:50%;
    transform: translateX(-50%);
    width:13vw;
