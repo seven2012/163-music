@@ -40,18 +40,26 @@ $(function () {
         audio.oncanplay = function () {
             audio.play()
             $('.disc-container').addClass('playing')
-            $('.pointer').removeClass('change')
+            $('.pointer').addClass('change2')
+            $('.pointer').removeClass('change1')
+            $('.disc-container').css('animation-play-state','running')
         }
         audio.addEventListener('ended', function () {
-            $('.pointer').addClass('change')
+            audio.play()
         })
         $('.icon-pause').on('click', function () {
             audio.pause()
             $('.disc-container').removeClass('playing')
+            $('.pointer').addClass('change1')
+            $('.pointer').removeClass('change2')
+            $('.disc-container').css('animation-play-state','paused')
         })
         $('.icon-play').on('click', function () {
             audio.play()
             $('.disc-container').addClass('playing')
+            $('.pointer').addClass('change2')
+            $('.pointer').removeClass('change1')
+            $('.disc-container').css('animation-play-state','running')
         })
         //同步歌词
         setInterval(() => {

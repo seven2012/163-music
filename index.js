@@ -30,7 +30,7 @@ $(function () {
         })
     }, 1000)
 
-    // $('.siteNav').on('click', 'ol.tabItems>li', function (e){
+    // $('.m-homenav').on('click', 'ol.tabItems>li', function (e){
     //     let $li = $(e.currentTarget).addClass('active')
     //     $li.siblings().removeClass('active')
     //     let index = $li.index()
@@ -38,8 +38,8 @@ $(function () {
     //     $('.tabContent > li').eq(index).addClass('active').siblings().removeClass('active')
     // })
 
-    // $('.siteNav').on('tabChange', function (e, index) {
-    //     let $li = $('.tabContent > li').eq(index)
+    // $('.m-homenav').on('tabChange', function (e, index) {
+    //     let $li = $('.container > li').eq(index)
     //     if ($li.attr('data-downloaded') === 'yes') {
     //         return
     //     }

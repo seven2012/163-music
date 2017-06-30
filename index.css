@@ -57,7 +57,7 @@ ol,ul{
     text-decoration: none;
     color:white;
 }
-
+/**/
 .m-homenav{
     position:relative;
     top:0;
@@ -73,17 +73,18 @@ ol,ul{
      background: white;
      border-bottom: 1px solid rgba(0,0,0,0.1)
 }
-.m-homenav li{
+.m-homenav ol>li{
     width:33.3333%;
     height:100%;
 }
-.m-homenav li div{
+.m-homenav ol>li div{
     position:relative;
     display:inline-block;
     padding:0 1.5vw;
     font-size: 4vw;
 }
-.m-homenav li span.active{
+
+.m-homenav ol>li span.active{
     color:#d33a31;
 }
 .m-homenav li span.active::after{
@@ -98,8 +99,7 @@ ol,ul{
     background: #d33a31;
 }
 
-
-#container{
+#musicShow{
     position:absolute;
     top:28.1vw;
     z-index:1;  

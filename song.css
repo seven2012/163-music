@@ -45,9 +45,14 @@ h1,h2,h3{
     left:45%;
     z-index:3;
 }
-.pointer.change{
+.pointer.change1{
     transition: transform .5s ease-out;
-    transform: rotate(-10deg);
+    transform:rotate(-10deg); 
+    transform-origin: 0 0;
+}
+.pointer.change2{
+    transition: transform .5s ease-out;
+    transform:rotate(0deg); 
     transform-origin: 0 0;
 }
 #disc-wrapper .pointer img{
@@ -74,11 +79,8 @@ h1,h2,h3{
     margin-top:58vw;
     z-index:2;  
     animation: circling 20s infinite linear;
-    animation-play-state: paused;   
 }
-#disc-wrapper .disc-container.playing{
-    animation-play-state: running;
-}
+
 #disc-wrapper .icon-pause{display:none;}
 #disc-wrapper .disc-container.playing~.icon-play{display:none;}
 #disc-wrapper .disc-container.playing~.icon-pause{display:block;}
