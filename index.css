@@ -63,6 +63,9 @@ ol,ul{
     top:0;
     left:0;   
 }
+.m-homefooter .footwrap {
+    padding-bottom: 5.333333vw;
+}
 .m-homenav ol{
      display:flex;
      justify-content: space-around;
@@ -83,11 +86,10 @@ ol,ul{
     padding:0 1.5vw;
     font-size: 4vw;
 }
-
-.m-homenav ol>li span.active{
+.m-homenav li.active span{
     color:#d33a31;
 }
-.m-homenav li span.active::after{
+.m-homenav li.active span::after{
     content: "";
     position: absolute;
     left: 0;
@@ -99,12 +101,20 @@ ol,ul{
     background: #d33a31;
 }
 
-#musicShow{
+/*内容展示区*/
+#container{
     position:absolute;
     top:28.1vw;
-    z-index:1;  
-    padding-top: 5.333333vw; 
-    padding-bottom:5.333333vw;
+    z-index:1;
+}
+#container > li{
+    display:none;
+}
+#container > li.active{
+    display:block;
+}
+#container #musicShow{
+    margin-top: 5.333333vw;
 }
 h2{   
     position: relative;
@@ -220,7 +230,174 @@ h2.latestMusicTitle{
     height:7.2vw;
     fill:#AAAAAA;
 }
+/*hotMusicPage*/
+#hotMusicPage{
+    position:relative;
+    width:100vw;
+    height:100%;
+}
+#hotMusicPage .hotop{
+    width:100%;
+    padding-top: 38.9%;
+   overflow: hidden;
+   background: url(https://ooo.0o0.ooo/2017/07/01/5957831d99acf.jpg) no-repeat;
+   background-size: contain;
+   z-index:2;
+}
+#hotMusicPage .hotop::after{
+    content:'';
+    position:absolute;
+    z-index: 1;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    background-color: rgba(0,0,0,.2);
+}
+#hotMusicPage .hotop .hotoppct{
+    position:absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+   display:flex;
+   flex-direction: column;
+   justify-content: center;
+   z-index:2;
+   padding-left:20px;
+}
+#hotMusicPage .hotop .hotoppct .hoticon{
+    background: url(https://ooo.0o0.ooo/2017/07/01/595785d1932a5.png) no-repeat;
+    width: 142px;
+    height: 67px;
+    background-position: -24px -30px;
+    background-size: 166px 97px;
+}
+#hotMusicPage .hotop .hotoppct .hottime{
+    margin-top:10px;
+    color:hsla(0,0%,100%,.8);
+    font-size:12px;
+    transform:scale(0.91);
+    transform-origin:left top;
+    text-align: start;
+}
+/*json*/
+.hotcontent{
+    position:absolute;
+    width:100vw;
+}
+.hotcontent ol li{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom:0.5px solid rgba(0,0,0,0.1);
+    padding:1.6vw 2.6667vw;
+}
+.hotcontent ol li .hrefSong{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color:inherit;
+    position:relative;
+}
+.hotcontent ol li .hrefSong .songId{
+    color:#df3436;
+    font-size:17px;
+    width:32px;
+    text-align: start;
+}
+.hotcontent ol li .hrefSong .songerInfo{
+    width:100%;
+}
+.hotcontent ol li .hrefSong .songerInfo h3{
+    font-size:4.5333333vw;
+    text-align: start;
+    margin-bottom: 0.8vw;
+}
+.hotcontent ol li .hrefSong .songerInfo p{
+    font-size: 3.2vw;
+    color: #888;
+    text-align: start;
+}
+.hotcontent ol li .hrefSong .songerInfo p img{
+    width: 3.733333vw;
+    height:2.133336vw;
+    margin-right:1.666668vw;
+}
+.hotcontent ol li .hrefSong .songerInfo p span{
 
+}
+
+.hotcontent ol li .hrefSong .icon-link-play{
+    width:8vw;
+    height:8vw;
+    fill:#AAAAAA;
+}
+#hotMusicPage .hotdn{
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+}
+#hotMusicPage .hotdn .hotview {
+    color: #999;
+    background-size: 7px 12px;
+    font-size:14px;
+}
+#hotMusicPage .hotdn img{
+    width:20px;
+    transform:translateY(20%);
+}
+/*searchPage*/
+#searchPage{
+    margin-top: 5.333333vw;
+}
+#searchPage .inputcover{
+    width:94vw;
+    padding:0 30px;
+    height:30px;
+    background:#EBECEC;
+    border-radius:30px;
+    margin-left:3vw;
+    margin-right:3vw;
+    position: relative;
+}
+#searchPage .inputcover input{
+    width:100%;
+    background: transparent;
+    height:30px;
+    line-height: 30px;
+    font-size:14px;
+    color:#333;
+    border:none;
+}
+.inputcover img{
+    width:13px;
+    height:13px;
+    position:absolute;
+    left:10px;
+    top:50%;
+    transform: translateY(-50%);
+}
+#searchPage .inputcover input:focus{
+    outline:0;
+}
+#searchPage .inputcover #output{
+    text-align: start;
+    margin-top:10px;
+}
+#searchPage .inputcover #output li{
+    display:flex;
+    align-items: center;
+}
+#searchPage .inputcover #output li a{
+    text-decoration: none;
+    color:inherit;
+    width:100%;
+}
+/*footer*/
 .m-homefooter{
     position: relative;
     margin-top:1.06668vw;

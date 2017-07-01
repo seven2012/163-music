@@ -50,8 +50,10 @@
 
         <section class="m-homenav">
             <ol class="tabItems">
-                <li class="musicShow">
-                    <div><span class="active">推荐音乐</span></div>
+                <li class="musicShow active">
+                    <div>
+                        <span>推荐音乐</span>
+                    </div>
                 </li>
                 <li class="hotMusicPage">
                     <div><span>热歌榜</span></div>
@@ -171,13 +173,39 @@
             </footer>
         </li>
         <li id="hotMusicPage">
-            <p>
-                <img src="./img/loading.gif" alt="">
-            </p>
+            <div class="hotop">
+
+                <div class="hotoppct">
+
+                    <div class="hoticon">
+
+                    </div>
+                    <div class="hottime">
+                        更新日期:06月29日
+                    </div>
+                </div>
+            </div>
+
+            <div class="hotcontent">
+                <p id="tab2Loading">
+                    <img src="./img/loading.gif" alt="">
+                </p>
+                <ol class="contentwrap">
+
+                </ol>
+                <div class="hotdn">
+                    <span class="hotview">查看完整榜单</span>
+                    <img src="./img/go.png" alt="">
+                </div>
+            </div>
+
         </li>
         <li id="searchPage">
-            <input id="searchSong" type="text" style="border: 1px solid red;">
-            <div id="output"></div>
+            <div class="inputcover">
+                <img src="./img/search.png" alt="">
+                <input id="searchSong" type="text" placeholder="搜索歌曲、歌手、专辑">
+                <div id="output"></div>
+            </div>
         </li>
     </ol>
     <script src="//at.alicdn.com/t/font_hgczzzdz3t0529.js"></script>
