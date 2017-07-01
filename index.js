@@ -110,7 +110,7 @@ $(function () {
                     let $ul = $('<ul></ul>')
                     result.forEach((item) => {
                         let $li = $(`
-                        <li><a href="/song.html?id=${item.id}">${item.name}</a></li>
+                        <li><a href="//song.html?id=${item.id}">${item.name}</a></li>
                         `)
                         $li.appendTo($ul)
                     })
