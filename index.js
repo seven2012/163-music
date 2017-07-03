@@ -10,7 +10,7 @@ $(function () {
                    <a href="./song.html?id=${i.id}">
                         <h3>${i.name}</h3>
                         <p>
-                        <img src="./img/sq.png" alt="">
+                        <img src="./images/sq.png" alt="">
                         <span>演唱者-${i.singer}</span>                       
                         </p>
                     </a>
@@ -61,7 +61,7 @@ $(function () {
                             <div class=songerInfo>
                                     <h3>${i.name}</h3>
                                     <p>
-                                    <img src="./img/sq.png" alt="">
+                                    <img src="./images/sq.png" alt="">
                                     <span>演唱者-${i.singer}</span>
                                     </p>                       
                             </div>                      
