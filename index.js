@@ -1,4 +1,4 @@
-
+    $(document).smoothScroll({});
     $(function() {
         //index.html
 
