@@ -1,4 +1,4 @@
-    $(document).smoothScroll({});
+    $('.section.playlists').smoothScroll({});
     $(function() {
         //index.html
 
